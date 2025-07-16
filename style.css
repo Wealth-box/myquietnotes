@@ -1,0 +1,55 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #4a90e2, #6fc1ff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  color: #fff;
+}
+.calendar-section, .note-section, .verse-section {
+  background: #fff;
+  max-width: 400px;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 10px;
+}
+.calendar-section.dark-mode, .note-section.dark-mode, .verse-section.dark-mode, .app-header.dark-mode {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  padding: 5px;
+}
+button {
+  margin-top: 5px;
+  width: 100%;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #3a7bc0;
+}
+#month-year { text-align: center; font-weight: bold; margin: 5px; }
+.day-names, .days { display: grid; grid-template-columns: repeat(7, 1fr); }
+.day-names div, .days div { text-align: center; padding: 4px; }
+.days div.selected { background: #6fc1ff; border-radius: 50%; color: #fff; }

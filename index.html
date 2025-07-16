@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiet Time Notes</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-header">
+    <h1>Quiet Time Notes</h1>
+    <button id="toggle-dark">Toggle Dark Mode</button>
+  </div>
+  <div class="calendar-section">
+    <div class="calendar-header">
+      <button id="prev">‹</button>
+      <div id="month-year"></div>
+      <button id="next">›</button>
+    </div>
+    <div class="calendar-body">
+      <div class="day-names">
+        <div>Sun</div><div>Mon</div><div>Tue</div>
+        <div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+      <div class="days" id="days"></div>
+    </div>
+  </div>
+  <div class="note-section">
+    <h3>Notes for <span id="selected-date">Select a date</span></h3>
+    <textarea id="note-text" placeholder="Write your quiet time note..."></textarea>
+    <button id="save-note">💾 Save Note</button>
+    <button id="set-alarm">⏰ Set Alarm Reminder</button>
+  </div>
+  <div class="verse-section">
+    <h4>Daily Bible Verse</h4>
+    <p id="daily-verse">Loading verse...</p>
+  </div>
+<script src="script.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('Service Worker Registered'));
+}
+</script>
+</body>
+</html>
